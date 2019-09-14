@@ -44,7 +44,7 @@ class Generator(object):
 
         # encoder part
         self._enc_batch = tf.placeholder(tf.int32, [hps.batch_size.value, None], name='enc_batch')
-        self._enc_lens = tf.placeholder(tf.int32, [hps.batch_size], name='enc_lens')
+        self._enc_lens = tf.placeholder(tf.int32, [hps.batch_size.value], name='enc_lens')
         self._enc_padding_mask = tf.placeholder(tf.float32, [hps.batch_size, None], name='enc_padding_mask')
         if FLAGS.pointer_gen:
             self._enc_batch_extend_vocab = tf.placeholder(tf.int32, [hps.batch_size, None],
